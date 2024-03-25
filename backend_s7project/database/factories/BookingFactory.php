@@ -23,7 +23,7 @@ class BookingFactory extends Factory
         return [
             'timetable_id' => Timetable::get()->random()->id,
             'user_id' => User::get()->random()->id,
-            'status' => 'Pending'
+            'status' => 'pending'
         ];
     }
 }

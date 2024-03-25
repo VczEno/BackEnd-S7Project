@@ -10,7 +10,7 @@
             
                                 
             <div class="card text-center mx-5">
-                <div class="card-header d-flex justify-content-between">
+                <div class="card-header d-flex justify-content-end">
                 @if(Auth::user()->is_admin === 1)
                                             <a type="button" class="btn btn-outline-warning mx-3 px-4" href="/course/{{$course->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                                             
@@ -43,18 +43,22 @@
                                             <p>Available places: {{$tt['available_places']}}</p>
                                            
                                             @if(Auth::user()->is_admin === 1)
+                                            <div class='d-flex justify-content-end'>
                                             <form method="post" action="/timetable/{{$tt->id}}">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-outline-danger mx-3 px-4" ><i class="bi bi-trash3-fill"></i></button>
                                             </form>
                                             <a type="button" class="btn btn-outline-warning" href="/timetable/{{$tt['id']}}/edit">Edit</a>
-                                            @else 
+                                            </div>
+                                            @else
+                                            <div> 
                                                 @if ($tt->available_places === 0)
                                                 <a type="button" class="btn btn-outline-success disabled" >Book</a>
                                                 @else
                                                 <a type="button" class="btn btn-outline-success" href="/booking/create?timetable_id={{$tt['id']}}">Book</a>
                                                 @endif
+                                            </div>
                                             @endif
                                         </li>
                                     @endforeach

@@ -14,7 +14,7 @@
 
 @foreach($courses as $c) 
         <div class="card m-5" >
-            <div class='card-header'>
+            <div class='card-header d-flex justify-content-end'>
             @if(Auth::user()->is_admin === 1)
                 <a type="button" class="btn btn-outline-warning mx-3 px-4" href="/course/{{$c->id}}/edit"><i class="bi bi-pencil-square"></i></a>
                 <form method="post" action="/course/{{$c->id}}">
@@ -30,14 +30,7 @@
                 
                 <p><span class='fw-semibold text-decoration-underline'>Creation date:</span> {{substr($c['created_at'], 0, -9 )}}</p>
                 <h5 class="fs-3">Price: <span>{{$c['price']}} €/month</span></h5>
-               <!--  @if($c['timetables'])
-                    <ul>
-                        <p>Turni disponibili</p>
-                        @foreach($c['timetables'] as $tt) 
-                            <li>Giorno: {{$tt['days']}} - {{$tt['time']}} - Posti disponibili: {{$tt['available_places']}}</li>
-                        @endforeach
-                    </ul>
-                @endif -->
+              
             </div>
                 
             <div class="card-footer text-center">

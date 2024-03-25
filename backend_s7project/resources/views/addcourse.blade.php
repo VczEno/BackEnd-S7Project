@@ -21,7 +21,7 @@
                     <div class="mb-3">
                             <input class="form-control" type="text" name="price" placeholder='Price...'>
                         </div> 
-                        <button type="submit" class="btn btn-dark">Add Course</button>
+                        <button type="submit" class="btn btn-outline-dark">Add Course</button>
                     </form>
                 </div>
             </div>

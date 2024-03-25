@@ -35,9 +35,9 @@
                     @csrf
                     @method('PATCH')
                     <select class="form-select" name="status">
-                                    <option value="Confirmed" @if ($b->status === "Confirmed") {{ 'selected' }} @endif > Confirmed</option>
-                                    <option value="Pending" @if ($b->status === "Pending") {{ 'selected' }} @endif >Pending</option>
-                                    <option value="Rejected" @if ($b->status === "Rejected") {{ 'selected' }} @endif >Rejected</option>
+                                    <option value="confirmed" @if ($b->status === "confirmed") {{ 'selected' }} @endif > Confirmed</option>
+                                    <option value="pending" @if ($b->status === "pending") {{ 'selected' }} @endif >Pending</option>
+                                    <option value="rejected" @if ($b->status === "rejected") {{ 'selected' }} @endif >Rejected</option>
                                    
                             </select>
                     <button type="submit" class="btn btn-outline-success mx-3 px-4" >Update Booking</button>
